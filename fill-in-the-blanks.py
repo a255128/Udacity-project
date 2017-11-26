@@ -53,36 +53,46 @@ def select_a_difficulty_level():
         print "You have found the sercet game!"
         return 3
 
-def process_paragraph(level, blank):
-    paragraph = paragraphs[level]
+def process_paragraph(para, level, blank):
+    paragraph = para
      #replace all the answer_of_quizs from current blank to the last one.
-    while blank < len(answer_of_quizs[level]):
+    if blank < len(answer_of_quizs[level]):
         word_to_replace = answer_of_quizs[level][blank]
         list_of_words = paragraph.split(" ")
+        
         index = 0
-         #Replace the word_to_replace with ___number___
+       
         while index < len(list_of_words):
-            if list_of_words[index] == word_to_replace:
-                list_of_words[index] = "___" + str(blank + 1) + "___"
+            temp_blank = "___" + str(blank + 1) + "___"
+            
+            if list_of_words[index] == temp_blank:
+                list_of_words[index] = word_to_replace
             index += 1
 
-        blank += 1
-        paragraph = " ".join(list_of_words)
+        # blank += 1
+        paragraph = " ".join(list_of_words)  
+        return paragraph
 
-    return paragraph
+    else:
+        return paragraph
 
 # play the game for the given level
 def play_game(level):
+    
     blank = 0
+    temp_pragraph = paragraphs[level]
+    
     # while not all answer_of_quizs are filled, keep guessing until the correct word is provided.
     while blank < len(answer_of_quizs[level]):
-        print process_paragraph(level, blank)
-
+        
+        print temp_pragraph
         question = "\n What should go in blank " + str(blank + 1) + "?"
         answer = raw_input(question).lower()
 
         correct_answer = answer_of_quizs[level][blank].lower()
+
         if correct_answer == answer:
+            temp_pragraph = process_paragraph(temp_pragraph, level, blank)
             print "Correct!"
             blank += 1
         else:
