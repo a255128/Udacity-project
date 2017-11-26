@@ -26,17 +26,19 @@ lunatic_quiz='''當所屬群體的___1___越多，當中___2___的思考__3___�
 
 paragraphs = [easy_quiz, medium_quiz, hard_quiz, lunatic_quiz]
 
-answer_of_quizs=[["Edison","late","focus","versions"],
-["popular","deliberate","inadequate","realm"],
-["maximize","scientific","philosophy","hypothesis"],
-["人群","個體","判斷","亂象"]]
+answer_of_quizs=[["Edison","late","focus","versions"], #easy_answers
+["popular","deliberate","inadequate","realm"], #medium_answers
+["maximize","scientific","philosophy","hypothesis"], #hard_answers
+["人群","個體","判斷","亂象"]] #luntic_answer
 
 #Futctions:
 
 def welcome(player_name):
+    #Show player's name.
     print "Welcome," + player_name +".This is a fill in blanks quiz. Have fun!"
 
 def select_a_difficulty_level():
+    #Player can choose a level they want to play.
     level = raw_input("Enter your difficulty level(easy / medium / hard):")
     if level == "easy":
         print "You are in easy game"
@@ -53,7 +55,7 @@ def select_a_difficulty_level():
 
 def process_paragraph(level, blank):
     paragraph = paragraphs[level]
-     #replace all the input_list from current blank to the last one.
+     #replace all the answer_of_quizs from current blank to the last one.
     while blank < len(answer_of_quizs[level]):
         word_to_replace = answer_of_quizs[level][blank]
         list_of_words = paragraph.split(" ")
@@ -72,8 +74,7 @@ def process_paragraph(level, blank):
 # play the game for the given level
 def play_game(level):
     blank = 0
-    # while not all input_list are filled, keep asking to guess the input_list
-    # until the correct word is provided
+    # while not all answer_of_quizs are filled, keep guessing until the correct word is provided.
     while blank < len(answer_of_quizs[level]):
         print process_paragraph(level, blank)
 
@@ -90,7 +91,8 @@ def play_game(level):
     print paragraphs[level]
     print "Well played!"
 
-def main():
+def play_game():
+    #Execute the main program.
     player_name = raw_input("What is your name? ")
     welcome(player_name)
 
@@ -108,6 +110,6 @@ def main():
         else:
             break
 
-    print "Thanks for playing! "
+    print player_name + "Thanks for playing! "
 
-main()
+    play_game()
