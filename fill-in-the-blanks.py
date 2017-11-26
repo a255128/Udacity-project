@@ -1,5 +1,3 @@
-#coding:utf-8
-
 #Global Variables:
 easy_quiz='''Most people think that ___1___ invented the first light bulb.They are wrong.
 In fact, he was spectacularly ___2___ to the game.
@@ -22,14 +20,35 @@ and create a new ___4___ based on what you learned.'''
 
 #the full article can find in https://medium.com/the-mission/forget-about-the-10-000-hour-rule-7b7a39343523
 
-lunatic_quiz='''當所屬群體的___1___越多，當中___2___的思考__3___能力就越低,所以這也解釋了網路世界為何___4___叢生。'''
+lunatic_quiz='''Death is nothing at all. 
+It does not count. 
+I have only ___1___ away into the next room. 
+Nothing has happened. 
+
+Everything ___2___ exactly as it was. 
+I am I, and you are you, 
+and the old life that we lived so fondly together is untouched, unchanged. 
+Whatever we were to each other, that we are still. 
+
+Call me by the old familiar name. 
+Speak of me in the easy way which you always used. 
+Put no difference into your tone. 
+Wear no forced air of ___3___ or sorrow.
+
+Laugh as we always laughed at the little jokes that we enjoyed together.
+Play, smile, think of me, pray for me. 
+Let my name be ever the ___4___ word that it always was. 
+Let it be spoken without an effort, without the ghost of a shadow upon it. '''
+
+
+'''Source: https://www.familyfriendpoems.com/poem/death-is-nothing-at-all-by-henry-scott-holland'''
 
 paragraphs = [easy_quiz, medium_quiz, hard_quiz, lunatic_quiz]
 
 answer_of_quizs=[["Edison","late","focus","versions"], #easy_answers
 ["popular","deliberate","inadequate","realm"], #medium_answers
 ["maximize","scientific","philosophy","hypothesis"], #hard_answers
-["人群","個體","判斷","亂象"]] #luntic_answer
+["slipped","remains","solemnity","household"]] #luntic_answer
 
 #Futctions:
 
@@ -120,6 +139,6 @@ def main():
         else:
             break
 
-    print player_name + "Thanks for playing! "
+    print player_name + ", Thanks for playing! "
 
 main()
