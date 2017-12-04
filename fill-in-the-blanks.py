@@ -44,33 +44,31 @@ Let it be spoken without an effort, without the ghost of a shadow upon it.'''
 
 paragraphs = [easy_quiz, medium_quiz, hard_quiz, lunatic_quiz]
 
-answer_of_quizs=[["Edison","late","focus","versions"], #easy_answers
+answer_of_quizs=[
+["Edison","late","focus","versions"], #easy_answers
 ["popular","deliberate","inadequate","professional"], #medium_answers
 ["maximize","scientific","philosophy","hypothesis"], #hard_answers
-["slipped","remains","solemnity","household"] #luntic_answer
+["slipped","remains","solemnity","household"]#luntic_answer
+]
 
-#Futctions:
+#functions:
 
 def welcome(player_name):
-        '''
-        Inputs:
-                The name of player.
-        Behavior:
-                Show player's name.
-        Outputs:
-                Introduction to game welcome.
-        '''
+    '''Inputs:
+            The name of player.
+    Behavior:
+            Show player's name.
+    Outputs:
+            Introduction to game welcome.'''
     print "Welcome," + player_name +".This is a fill in blanks quiz. Have fun!"
 
 def select_a_difficulty_level():
-    '''
-    Inputs:
+    '''Inputs:
             Current level.
     Behavior:
             Player can choose a level they want to play.
     Outputs:
-            The specific paragraph and answers associated with that level.
-    '''
+            The specific paragraph and answers associated with that level.'''
     level = raw_input("Enter your difficulty level(easy / medium / hard):")
     if level == "easy":
         print "You are in easy game"
@@ -86,14 +84,12 @@ def select_a_difficulty_level():
         return 3
 
 def process_paragraph(level, blank):
-    '''
-    Inputs:
+    '''Inputs:
             Current level and given blank.
     Behavior:
             Replace the words in answer_of_quizs for the level from given blank.
     Outputs:
-            Paragraph show the blank.
-    '''
+            Paragraph show the blank.'''
     paragraph = paragraphs[level]
         #replace all answer_of_quizs from current blank to the last one.
     while blank < len(answer_of_quizs[level]):
@@ -113,14 +109,12 @@ def process_paragraph(level, blank):
 
 # play the game for the given level
 def play_game(level):
-    '''
-    Inputs:
+    '''Inputs:
             The current level.
     Behavior:
             Collect user's answer and judge it is right or wrong.
     Outputs:
-            The correct answers replaced blanks in paragraph.
-    '''
+            The correct answers replaced blanks in paragraph.'''
     blank = 0 # Given blank
 
     while blank < len(answer_of_quizs[level]):
@@ -141,14 +135,12 @@ def play_game(level):
     print "Well played!"
 
 def main():
-    '''
-    Inputs:
+    '''Inputs:
             Click Run Module in Python.
     Behavior:
             Execute the main program.
     Outputs:
-            Whole program.
-    '''
+            Whole program.'''
     player_name = raw_input("What is your name? ")
     welcome(player_name)
 
