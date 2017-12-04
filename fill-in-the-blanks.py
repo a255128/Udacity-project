@@ -1,5 +1,5 @@
 #Global Variables:
-easy_quiz='''Most people think that ___1___ invented the first light bulb.They are wrong.
+easy_quiz='''Most people think that ___1___ invented the first light bulb.They’re wrong.
 In fact, he was spectacularly ___2___ to the game.
 In 1878, when the 36-year-old inventor decided to ___3___ on building a light bulb,
 23 others had already invented early ___4___ called arc lamps.'''
@@ -120,7 +120,7 @@ def play_game(level):
     print paragraphs[level]
     print "Well played!"
 
-def main():
+def play_game():
     #Execute the main program.
     player_name = raw_input("What is your name? ")
     welcome(player_name)
@@ -141,4 +141,4 @@ def main():
 
     print player_name + ", Thanks for playing! "
 
-main()
+    play_game()
